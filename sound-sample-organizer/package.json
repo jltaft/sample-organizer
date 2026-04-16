@@ -1,0 +1,48 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "My website as a desktop app",
+  "author": "Ryan Abe, Noah Fernades, Eddy Guo, Jennifer Taft, Malco Salcedo, Zeke Milay",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-server": "pyinstaller --distpath server-dist sound-sample-server.spec",
+    "build-app": "npm run build-server && electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^37.2.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "forceCodeSigning": false,
+    "directories": {
+      "output": "release"
+    },
+    "appId": "com.PLACEHOLDER.my-electron-app",
+    "icon": "assets/official-icon",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "settings.js",
+      "settings.json",
+      "webfuncs.js",
+      "package.json",
+      "server-dist/sound-sample-server.exe",
+      "skins/**",
+      "assets/**"
+    ],
+    "extraResources": [
+      {
+        "from": "server-dist/",
+        "to": "server/",
+        "filter": [
+          "sound-sample-server.exe"
+        ]
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

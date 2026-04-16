@@ -1,0 +1,175 @@
+:root {
+	--bright: #bbbbbb;
+	--glow: #ffffff;
+	--bg-dark: #0a0a0a;
+	--terminal: "Bitcount Grid Double", "VT323", monospace;
+}
+
+.hidden {
+	display: none;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	background-image: url("blame.jpg");
+	background-size: cover;
+	background-color: var(--bg-dark);
+	font-family: var(--terminal);
+	color: var(--bright);
+	font-family: "Bitcount Grid Double", system-ui;
+  	font-optical-sizing: auto;
+  	font-weight: 400;
+  	font-style: Light;
+  	font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+body::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background: url("static.gif");
+	opacity: 0.1;
+	mix-blend-mode: screen;
+	z-index: 9999;
+}
+
+#main {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	width: 80%;
+	margin: 8% auto;
+	color: var(--bright);
+	border: 5px solid var(--bright);
+	background-color: rgba(0, 0, 0, 0.85);
+	display: flex;
+	box-shadow:
+		4px 4px 10px rgba(255, 255, 255, 0.2),
+		-4px -4px 10px rgba(255, 255, 255, 0.2),
+		4px -4px 10px rgba(255, 255, 255, 0.2),
+		-4px 4px 10px rgba(255, 255, 255, 0.2);
+		
+}
+
+input::file-selector-button {
+	color: var(--bright);
+	background-color: black;
+	border: 1px solid var(--bright);
+	padding: 5px;
+	cursor: pointer;
+	font-family: var(--terminal);
+	font-variation-settings:
+	"slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#upload {
+	display: none;
+}
+
+.uploadButton {
+	display: inline-block;
+	padding: 8px 12px;
+	background-color: black;
+	cursor: pointer;
+	border: 1px solid var(--bright);
+}
+
+.file-name {
+	margin-left: 10px;
+}
+
+button {
+	display: none;
+}
+
+.uploadButton:hover {
+	box-shadow: 0 0 6px var(--glow);
+	color: #fff;
+}
+
+input[type=text] {
+	background-color: #111;
+	color: var(--bright);
+	border: 2px solid var(--bright);
+
+	font-family: var(--terminal);
+	font-optical-sizing: auto;
+	font-weight: 400;
+  	font-style: Light;
+	font-variation-settings:
+	"slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#skinSelector {
+	border: var(--bright) 2px solid;
+	background-color: black;
+	color: var(--bright);
+	font-family: "Bitcount Grid Double", system-ui;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 20%;
+  height: 1em;
+  border: 2px solid var(--bright);
+  background-color: black;
+  outline: none;
+  transition: background 0.3s;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.4em;
+  height: 1.4em;
+  background: var(--bg-dark);
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--glow);
+}
+
+
+.slider:hover {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a,
+    #505050,
+    #7a7a7a,
+    #505050,
+    #2a2a2a
+  );
+}
+
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#left {
+	flex: 1;
+	padding: 7% 2%;
+	border-right: 1px dashed var(--bright);
+}
+
+#right,
+#right_onload {
+	flex: 1;
+	padding: 4%;
+}

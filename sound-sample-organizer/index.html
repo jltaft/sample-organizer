@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sample Sort</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+	<link id="theme-css" rel="stylesheet" href="skins/default.css">
+	<link rel="icon" type="image/png" href="assets/offcial-icon.png">
+	<script type="text/javascript" src="webfuncs.js"></script>
+	<script src="Spectrogram-2v01.js"></script>
+</head>
+<body>
+	<div id="main">
+		<div id="left">
+			<h1>Sample Sort</h1>
+			<label for="switch_mode" class="switch_button">
+				switch mode
+				<button id="switch_mode"></button>
+			</label>
+			<br>
+			<br>
+			<p class="left_desc">upload any audio files</p>
+			<p class="left_desc">they will be sorted by our ml model</p>
+			<p class="left_desc">into subdirectories based on instrument</p>
+			<p class="left_desc">adjust epsilon of neural net with slider</p>
+			<br>
+			<label class="uploadButton" for="upload">choose files</label>
+			<input id="upload" type="file" name="samples" accept="audio/*" multiple>
+			<span class="file-name" id="fileName">no files chosen</span>
+			<br>
+			<br>
+			threshold: 
+			<strong><span id="epsilon_value">30%</span></strong>
+			<input id="epsilon_select" type="range" min="0" max="100" class="slider" value="30">
+			<br>
+			<br>
+			skin: 
+			<select id="skinSelector" onchange="onSkinSelect(this.value)">
+  				<option value="default">Default</option>
+  				<option value="dark">Dark</option>
+  				<option value="metal">Metal</option>
+			</select>
+			<br>
+			<br>
+			<label for="submit" class="fileUpload">
+				submit
+				<button id="submit"></button>
+			</label>
+		</div>
+		
+		<div id="left2" class="hidden">
+			<h1>Sample Analyze</h1>
+			<label for="switch_mode" class="switch_button">
+				switch mode
+				<button id="switch_mode"></button>
+			</label>
+			<br>
+			<br>
+			<p class="left_desc">this tool lets you see information</p>
+			<p class="left_desc">about your sound, this is the info we</p>
+			<p class="left_desc">use to categorize the sound but can</p>
+			<p class="left_desc">be helpful to see for mastering tracks</p>
+			<br>
+			<label class="uploadButton" for="upload">choose a file</label>
+			<input id="upload" type="file" name="samples" accept="audio/*">
+			<br>
+			<br>
+			<label for="submit_single" class="fileUpload">
+				submit
+				<button id="submit_single"></button>
+			</label>
+		</div>
+		<div  id="right_onload">
+			<h3>welcome to sample sort</h3>
+			<p>this program has two tools. On the left is a quick and simple way to categorize a sample pack 
+			into subdirectories based on instrument</p>
+			<p>the threshold slider on the left will modify the threshold at which the ML model sorts the 
+			instruments. a threshold of 100 leaves everything unsorted.</p>
+			<p>if you click switch mode you will be brought over to our sample analyze tool</p>
+			<p>this tools lets you pick a single file and view the audio features our ML model analyzes
+			your file with. this tool also generates a spectrogram that lets you visualize the audio</p>
+			<p>you can also adjust the skin between a few of our skins for the UI. it is also easy to
+			create your own skin using css</p>
+			<p>ENJOY!</p>
+		</div>
+		<div  id="right" class="hidden">
+			<p id="0" class="names">1</p>
+			<p id="1" class="names">2</p>
+			<p id="2" class="names">3</p>
+			<p id="3" class="names">4</p>
+			<p id="4" class="names">5</p>
+			<p id="5" class="names">6</p>
+			<p id="6" class="names">7</p>
+			<p id="7" class="names">8</p>
+			<p id="8" class="names">9</p>
+			<p id="9" class="names">10</p>
+			<p id="10" class="names">11</p>
+			<p id="11" class="names" id="more"></p>
+		</div>
+		<div  id="right2" class="hidden">
+			<p id="00" class="names">1</p>
+			<p id="01" class="names">1</p>
+			<table id="spec_fts">
+				<tr>
+					<td id="02"></td>
+					<td id="03"></td>
+					<td id="04"></td>
+				</tr>
+				<tr>
+					<td id="05"></td>
+					<td></td>
+					<td id="07"></td>
+				</tr>
+				<tr>
+					<td id="08"></td>
+					<td id="09"></td>
+					<td id="06"></td>
+				</tr>
+			</table>
+			<p id="010" class="names">1</p>
+			<canvas id="spectrogram_disp"></canvas>
+		</div>
+	</div>
+</body>
+</html>

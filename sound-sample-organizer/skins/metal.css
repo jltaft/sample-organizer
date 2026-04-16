@@ -1,0 +1,272 @@
+:root {
+        --bright: #3b3b3b;
+}
+
+.hidden {
+        display: none;
+}
+
+body {
+        padding: 0px;
+        margin: 0px;
+        background-image: url("metal.png");
+        background-size: cover;
+        font-family: "Bitcount Grid Double", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: Light;
+        font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#main {
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        background-color: #3b3b3b;
+        color: var(--bright);
+        margin-top: 8%;
+        margin-bottom: 8%;
+        width: 80%;
+        margin-left: 10%;
+        border: var(--bright) 5px solid;
+        background-color: rgba(0,0,0,0.8);
+        border-color: 
+            linear-gradient(
+              90deg,
+              #7e7e7e 0%,
+              #e3e3e3 25%,
+              #787878 50%,
+              #e3e3e3 75%,
+              #7e7e7e 100%
+        );
+        display: flex;
+        background:
+            linear-gradient(
+              90deg,
+              #7e7e7e 0%,
+              #e3e3e3 25%,
+              #787878 50%,
+              #e3e3e3 75%,
+              #7e7e7e 100%
+        );
+        box-shadow:       
+                4px 4px 10px rgba(0,0,0,0.8),
+                -4px -4px 10px rgba(0,0,0,0.8),
+                4px -4px 10px rgba(0,0,0,0.8),
+                -4px 4px 10px rgba(0,0,0,0.8);
+                inset  0   1px 0 0  #a9a9a9,
+                inset  0  -1px 0 0  #3b3b3b,
+                inset  1px  0   0 0  #3b3b3b,
+                inset -1px  0   0 0  #3b3b3b;
+}
+
+input::file-selector-button {
+        color: white;
+        background:
+            linear-gradient(
+              90deg,
+              #7e7e7e 0%,
+              #e3e3e3 25%,
+              #787878 50%,
+              #e3e3e3 75%,
+              #7e7e7e 100%
+        );
+        box-shadow:
+                inset  0   1px 0 0  #a9a9a9,
+                inset  0  -1px 0 0  #3b3b3b,
+                inset  1px  0   0 0  #3b3b3b,
+                inset -1px  0   0 0  #3b3b3b;
+        border-color: #3b3b3b;
+        height: 2.5em;
+        padding: 5px;
+        font-family: "Bitcount Grid Double", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: Light;
+        font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#upload {
+        display: none;
+}
+
+.uploadButton {
+        display: inline-block;
+        padding: 8px 12px;
+        background:
+            linear-gradient(
+              90deg,
+              #7e7e7e 0%,
+              #e3e3e3 25%,
+              #787878 50%,
+              #e3e3e3 75%,
+              #7e7e7e 100%
+        );
+        cursor: pointer;
+        color: #3b3b3b;
+        border-radius: 2px;
+        border: solid var(--bright) #3b3b3b; 2px;
+        box-shadow:
+                inset  0   1px 0 0  #a9a9a9,
+                inset  0  -1px 0 0  #3b3b3b,
+                inset  1px  0   0 0  #3b3b3b,
+                inset -1px  0   0 0  #3b3b3b;
+}
+
+.file-name {
+        margin-left: 10px;
+}
+
+button {
+        display: none;
+}
+
+input[type=text] {
+        background-color: black;
+        color: white;
+        text-shadow:
+        0 0 5px #fff, /* Inner white glow */
+        0 0 10px #fff, /* Second white glow layer */
+        0 0 15px #0073e6, /* Blue neon glow layer */
+        0 0 20px #0073e6, /* Another blue glow layer */
+        0 0 25px #0073e6, /* Further blue glow */
+        0 0 30px #0073e6, /* Even further blue glow */
+        0 0 35px #0073e6; /* Outermost blue glow */
+        border: var(--bright) 2px solid #3b3b3b;
+        font-family: "Bitcount Grid Double", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: Light;
+        font-variation-settings:
+        box-shadow:
+                inset  0   1px 0 0  #a9a9a9,
+                inset  0  -1px 0 0  #3b3b3b,
+                inset  1px  0   0 0  #3b3b3b,
+                inset -1px  0   0 0  #3b3b3b;
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+#left {
+        flex: 1;
+        padding-top: 7%;
+        padding-bottom: 7%;
+        border-right: 5px var(--bright) solid;
+}
+
+#right {
+        flex: 1;
+        margin: 0px;
+        height: 100%;
+        padding: 4%;
+}
+
+#right_onload {
+        flex: 1;
+        margin: 0px;
+        height: 100%;
+        padding: 4%;
+}
+
+.fader{
+    position:relative;
+    display:inline-block;
+    padding:6px;
+    background:
+            repeating-linear-gradient(90deg, transparent 0 9%, #d0d0d0 8% 10%), 
+            center / 100% 4px no-repeat, 
+            linear-gradient(90deg, #7e7e7e 0%, #e3e3e3 30%, #787878 60%, #e3e3e3 80%, #7e7e7e 100%);
+    border:1px solid #3b3b3b;
+    box-shadow:inset 0 1px 0 #d0d0d0,inset 0 -1px 0 #222;
+}
+
+.fader .slider{
+    width:140px;
+    height:8px;
+    background:#000;
+    -webkit-appearance:none;
+    outline:none;
+    cursor:pointer;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 20%;
+  height: 1em;
+  border: var(--bright) 2px solid #3b3b3b;
+  background: black;
+  outline: none;
+  -webkit-transition: .2s;
+  box-shadow:
+                inset  0   1px 0 0  #a9a9a9,
+                inset  0  -1px 0 0  #3b3b3b,
+                inset  1px  0   0 0  #3b3b3b,
+                inset -1px  0   0 0  #3b3b3b;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    width:16px;
+    height:16px;
+    border-radius:2px;
+    border:1px solid #3b3b3b;
+    background:
+            linear-gradient(
+              90deg,
+              #7e7e7e 0%,
+              #e3e3e3 25%,
+              #787878 50%,
+              #e3e3e3 75%,
+              #7e7e7e 100%
+    );
+    box-shadow:0 0 2px rgba(0,0,0,.6);
+}
+
+.slider::-moz-range-thumb{
+    width:16px;
+    height:16px;
+    border-radius:2px;
+    border:1px solid #3b3b3b;
+    background:radial-gradient(circle at 30% 30%,#fefefe 0%,#dcdcdc 60%,#7c7c7c 100%);
+}
+.screw-panel{
+    position:relative;              
+}
+
+.screw, .screw-panel::before, .screw-panel::after{
+    content:"";                     
+    position:absolute;width:12px;height:12px;border-radius:50%;
+    background:
+        linear-gradient(#222 0 0) center / 2px 70% no-repeat,
+        linear-gradient(#222 0 0) center / 70% 2px no-repeat,
+        radial-gradient(circle at 30% 30%, #fefefe 0%, #dcdcdc 60%, #6e6e6e 100%);
+    border:1px solid #6a6a6a;
+    box-shadow:0 0 2px rgba(0,0,0,.7);
+}
+
+/* top screws */
+.screw-panel::before{top:6px;left:6px;}
+.screw-panel::after {top:6px;right:6px;}
+/*bottom screws*/
+.screw.bl{bottom:6px;left:6px;}
+.screw.br{bottom:6px;right:6px;}
+
+/* grooves for screw */
+.screw::after,
+.screw-panel::before::after,
+.screw-panel::after::after{
+    content:"";
+    position:absolute;left:2px;right:2px;top:50%;
+    height:2px;background:#444;border-radius:1px;
+    transform:translateY(-50%);
+}
